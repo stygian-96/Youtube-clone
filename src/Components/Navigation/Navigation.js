@@ -7,7 +7,7 @@ const checkWidthChange = () => {
     else return true;
 }
 
-function Navigation() {
+const Navigation = ({changePadding}) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true)
     const [onceToggled, setOnceToggled] = useState(false)
     const [className, setClassName] = useState('home-sidebar-open')
@@ -16,25 +16,23 @@ function Navigation() {
         let timeoutId = null;
         const resizeListener = () => {
             clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                console.log(onceToggled)
-                if (!onceToggled){
-                    setIsSidebarOpen(checkWidthChange())
-                }}, 100);
+            timeoutId = setTimeout(() => {setIsSidebarOpen(checkWidthChange())}, 100);
         };
         window.addEventListener('resize', resizeListener);
     
         return () => {
             window.removeEventListener('resize', resizeListener);
         }
-    }, [onceToggled])
+    }, [])
 
     useEffect(() => {
         if(isSidebarOpen){
             setClassName('home-sidebar-open')
+            changePadding('256')
         }
         else{
             setClassName('home-sidebar-closed')
+            changePadding('88')
         }
     },[isSidebarOpen])
 
@@ -48,7 +46,7 @@ function Navigation() {
     return (
         <>
             <TopNav changeSidebarState={changeSidebarState}/>
-            <Sidebar clsName = {className} />  
+            <Sidebar changeSidebarState={changeSidebarState} clsName = {className} />  
         </>
     )
 }

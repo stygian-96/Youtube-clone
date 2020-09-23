@@ -1,9 +1,9 @@
 import React from 'react'
 import '../../style/Recommended/recommended.css'
 
-function Recommended() {
+const Recommended = ({paddingLeft}) => {
     return (
-        <div className="recommended-body">
+        <div className="recommended-body" style={paddingLeft}>
             Recommended
         </div>
     )

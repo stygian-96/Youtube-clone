@@ -2,6 +2,17 @@
     display: none;
 }
 
+.sidebar-item-title{
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.break{
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    margin: 12px 0px;
+}
+
 
 /* Home Sidebar open */
 
@@ -15,10 +26,10 @@
     top:0;
     left:0;
     z-index: 50;
-    padding-top: 72px;
+    padding-top: 65px;
     overflow: auto;
     background-color: white;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0,0,0,0.6);
 }
 
 .home-sidebar-open .sidebar-item{
@@ -39,12 +50,6 @@
     font-weight: 550;
 }
 
-.home-sidebar-open .break{
-    width: 100%;
-    border-bottom: 1px solid lightgray;
-    margin: 12px 0px;
-}
-
 /* Home Sidebar Closed */
 
 .home-sidebar-closed{
@@ -60,7 +65,7 @@
     padding-top: 56px;
     overflow: auto;
     background-color: white;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0,0,0,0.6);
 }
 
 .home-sidebar-closed .sidebar-item{
@@ -81,8 +86,8 @@
     font-size: 11px;
 }
 
-.home-sidebar-open .break{
-    display: none;
+.home-sidebar-closed .break{
+    display: none !important;
 }
 
 /* Watch Sidebar open */
@@ -99,13 +104,13 @@
     z-index: 1000;
     overflow: auto;
     background-color: white;
-    color: rgba(0,0,0,0.7);
+    color: rgba(0,0,0,0.6);
 }
 
 .watch-sidebar-open .watch-sidebar-logo{
     display: flex !important;
     padding-left: 16px;
-    height: 56.5px;
+    height: 57px;
     width: 100%;
     align-items: center;
     justify-content: flex-start;
@@ -124,6 +129,7 @@
 }
 
 .watch-sidebar-open .watch-sidebar-nav-logo{
+    height: 17px;
     width: 75px;
 }
 
@@ -143,10 +149,4 @@
 .watch-sidebar-open .sidebar-item-icon{
     margin-right: 24px;
     font-weight: 550;
-}
-
-.watch-sidebar-open .break{
-    width: 100%;
-    border-bottom: 1px solid lightgray;
-    margin: 12px 0px;
 }

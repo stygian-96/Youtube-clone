@@ -5,12 +5,12 @@ import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../../style/Navigation/sidebar.css'
 
-const Sidebar = ({clsName}) => {
+const Sidebar = ({clsName, changeSidebarState}) => {
     return (
         <div className = {clsName}>
             <div className = "watch-sidebar-logo show">
                 <div className="watch-sidebar-icon">
-                    <MenuIcon />
+                    <MenuIcon onClick={changeSidebarState}/>
                 </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
                     alt="YouTube"
