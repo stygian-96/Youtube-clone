@@ -1,4 +1,11 @@
-.sidebar{
+.show{
+    display: none;
+}
+
+
+/* Home Sidebar open */
+
+.home-sidebar-open{
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,12 +15,13 @@
     top:0;
     left:0;
     z-index: 50;
-    padding-top: 66px;
+    padding-top: 72px;
     overflow: auto;
     background-color: white;
+    color: rgba(0,0,0,0.7);
 }
 
-.sidebar-item{
+.home-sidebar-open .sidebar-item{
     width: 100%;
     display: flex;
     align-items: center;
@@ -22,16 +30,122 @@
     padding-left: 24px;
 }
 
-.sidebar-item:hover{
+.home-sidebar-open .sidebar-item:hover{
     background-color: rgba(0,0,0,0.05);
 }
 
-.sidebar-item-icon{
+.home-sidebar-open .sidebar-item-icon{
     margin-right: 24px;
     font-weight: 550;
 }
 
-.break{
+.home-sidebar-open .break{
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    margin: 12px 0px;
+}
+
+/* Home Sidebar Closed */
+
+.home-sidebar-closed{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    align-items: flex-start;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 50;
+    padding-top: 56px;
+    overflow: auto;
+    background-color: white;
+    color: rgba(0,0,0,0.7);
+}
+
+.home-sidebar-closed .sidebar-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin-top: 16px;
+    margin-bottom: 14px;
+}
+
+.home-sidebar-closed .sidebar-item-icon{
+    margin-bottom: 6px;
+}
+
+.home-sidebar-closed .sidebar-item-title{
+    font-size: 11px;
+}
+
+.home-sidebar-open .break{
+    display: none;
+}
+
+/* Watch Sidebar open */
+
+.watch-sidebar-open{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    align-items: flex-start;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1000;
+    overflow: auto;
+    background-color: white;
+    color: rgba(0,0,0,0.7);
+}
+
+.watch-sidebar-open .watch-sidebar-logo{
+    display: flex !important;
+    padding-left: 16px;
+    height: 56.5px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+    border-bottom: 1px solid lightgray
+}
+
+.watch-sidebar-open .watch-sidebar-icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.watch-sidebar-open .watch-sidebar-nav-logo{
+    width: 75px;
+}
+
+.watch-sidebar-open .sidebar-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    padding-left: 24px;
+}
+
+.watch-sidebar-open .watch-sidebar-icon:hover ,.watch-sidebar-open .sidebar-item:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+
+.watch-sidebar-open .sidebar-item-icon{
+    margin-right: 24px;
+    font-weight: 550;
+}
+
+.watch-sidebar-open .break{
     width: 100%;
     border-bottom: 1px solid lightgray;
     margin: 12px 0px;
