@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
+    top: 0;
+    position: sticky;
+    background-color: white;
+    z-index: 999;
 }
 
 /* Left */
@@ -15,24 +19,17 @@
 }
 
 .nav-logo{
-    height: 18px;
+    height: 17.5px;
 }
 
-.icon{
-    height: 40px;
-    width: 40px;
-    border-radius: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo .icon{
     margin-right: 16px;
 }
-
 
 /* Middle */
 
 .search{
-    width: 55%;
+    width: 57.5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,15 +47,15 @@
     border: none;
     flex: 1;
     min-width: 0px;
+    height: 30px;
+    outline: none;
+    margin-left: 10px;
+    font-size: 1rem;
+    font-weight: 540;
+    justify-content: center;
 }
 
-.search form input{
-    border: none;
-    flex: 1;
-    min-width: 0px;
-}
-
-.search form div{
+.search-icon-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +63,10 @@
     border-left: 1px solid lightgray;
     height: 100%;
     background-color: rgba(0,0,0,0.025);
+}
+
+.search-icon-container:hover{
+    background-color: rgba(0,0,0,0.08);
 }
 
 /* Right */
@@ -79,19 +80,32 @@
 }
 
 .right .icon{
-    height: 40px;
-    width: 40px;
-    border-radius: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-right: 8px;
 }
 
 .nav-profile{
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     background-color: lightgrey;
     margin: 0 6px;
+}
+
+/* Icon Colors */
+
+.nav-icon{
+    color: rgba(0,0,0,0.7);
+}
+
+.icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon:hover{
+    background-color: lightgray;
 }
