@@ -7,12 +7,12 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import '../../style/Navigation/topnav.css'
 import '@polymer/paper-ripple/paper-ripple.js';
 
-function TopNav() {
+const TopNav = ({changeSidebarState}) => {
     return (
         <div className = "top-nav">
             <div className = "logo">
-                <div className="icon">
-                    <MenuIcon className="nav-icon" />
+                <div className="icon" onClick = {changeSidebarState}>
+                    <MenuIcon className="nav-icon"/>
                 </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
                     alt="YouTube"

@@ -1,13 +1,13 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import HomeIcon from '@material-ui/icons/Home';
 import WhatshotIcon from '@material-ui/icons/Whatshot';
 import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import MenuIcon from '@material-ui/icons/Menu';
 import '../../style/Navigation/sidebar.css'
 
-function Sidebar() {
+const Sidebar = ({clsName}) => {
     return (
-        <div className = "watch-sidebar-open">
+        <div className = {clsName}>
             <div className = "watch-sidebar-logo show">
                 <div className="watch-sidebar-icon">
                     <MenuIcon />
