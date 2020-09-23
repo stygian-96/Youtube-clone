@@ -1,0 +1,97 @@
+.top-nav{
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+/* Left */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-logo{
+    height: 18px;
+}
+
+.icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+
+/* Middle */
+
+.search{
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search form{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 32px;
+    border: 1px solid lightgrey;
+}
+
+.search form input{
+    border: none;
+    flex: 1;
+    min-width: 0px;
+}
+
+.search form input{
+    border: none;
+    flex: 1;
+    min-width: 0px;
+}
+
+.search form div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    border-left: 1px solid lightgray;
+    height: 100%;
+    background-color: rgba(0,0,0,0.025);
+}
+
+/* Right */
+
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 225px;
+    padding-left: 20px;
+}
+
+.right .icon{
+    height: 40px;
+    width: 40px;
+    border-radius: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.nav-profile{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    margin: 0 6px;
+}
