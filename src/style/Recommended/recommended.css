@@ -16,6 +16,7 @@
 .container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* calc((100% - 64px)/4); */
@@ -78,4 +79,11 @@
         width: calc((100% - 32px)/2);
     }
 }
+
+@media(max-width: 512px){
+    .video-card-container{
+        width: 398.98px;
+    }
+}
+
 
