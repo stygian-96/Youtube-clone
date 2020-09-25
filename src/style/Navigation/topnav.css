@@ -1,11 +1,12 @@
 .top-nav{
     height: 56px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
     top: 0;
-    position: sticky;
+    position: fixed;
     background-color: white;
     z-index: 999;
 }
@@ -29,7 +30,7 @@
 /* Middle */
 
 .search{
-    width: 57.5%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +39,7 @@
 .search form{
     display: flex;
     align-items: center;
-    width: 80%;
+    width: 90%;
     height: 32px;
     border: 1px solid lightgrey;
 }

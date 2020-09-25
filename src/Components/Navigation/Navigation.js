@@ -28,11 +28,11 @@ const Navigation = ({changePadding}) => {
     useEffect(() => {
         if(isSidebarOpen){
             setClassName('home-sidebar-open')
-            changePadding('256')
+            changePadding('248')
         }
         else{
             setClassName('home-sidebar-closed')
-            changePadding('88')
+            changePadding('80')
         }
     },[isSidebarOpen])
 

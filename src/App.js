@@ -4,10 +4,10 @@ import Navigation from './Components/Navigation/Navigation';
 import Recommended from './Components/Recommended/recommended';
 
 const App = () => {
-  const [paddingLeft, setPaddingLeft] = useState({paddingLeft: "256px"})
+  const [paddingLeft, setPaddingLeft] = useState("256px")
 
   const changePadding = (amount) => {
-    setPaddingLeft({paddingLeft: `${amount}px`})
+    setPaddingLeft(`${amount}px`)
   }
 
   return (
