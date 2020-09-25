@@ -73,7 +73,7 @@
     }
 }
 
-@media(max-width: 1142px){
+@media(max-width: 888px){
     .video-card-container{
         width: calc((100% - 32px)/2);
     }
