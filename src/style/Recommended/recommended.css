@@ -26,6 +26,7 @@
     flex-direction: column;
     margin: 0px 8px;
     margin-bottom: 40px;
+    max-width: 319.98px;
 }
 
 .video-card-thumbnail{
@@ -65,3 +66,16 @@
     height: 18px;
     background-color: rgba(0,0,0,0.1);
 }
+
+@media(max-width: 1142px){
+    .video-card-container{
+        width: calc((100% - 48px)/3);
+    }
+}
+
+@media(max-width: 1142px){
+    .video-card-container{
+        width: calc((100% - 32px)/2);
+    }
+}
+
