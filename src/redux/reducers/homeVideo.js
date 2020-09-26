@@ -17,7 +17,7 @@ const homeVideos = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                videos: action.error
+                error: action.error
             }
         default:
             return null

@@ -10,13 +10,12 @@ export function fetchHomeVideos() {
                 key: 'AIzaSyDdXPJ_qshotI7fxmBT8S_ihw33BOkvvBo',
                 maxResults: 28,
                 regionCode:'IN'
-            }.then( (res) => {
-                let videos = res.data.items
+            }}).then( (res) => {
+                let videos = res
                 dispatch(receiveHomeVideos(videos))
             }).catch( error => {
                 dispatch(errorHomeVideos(error))
             })
-        })
 	}
 }
 
