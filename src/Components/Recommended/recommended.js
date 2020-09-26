@@ -1,6 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import { connect } from 'react-redux'
-import { fetchHomeVideos } from '../../redux/actions/homeVideoAction'
 import '../../style/Recommended/recommended.css'
 import Axios from 'axios'
 
@@ -40,7 +38,6 @@ const Recommended = ({paddingLeft}) => {
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
-                console.log(res)
                 setLoading(false)
                 setVideos([...res.data.items])
             }).catch( error => {
@@ -62,7 +59,7 @@ const Recommended = ({paddingLeft}) => {
                                 <div className="video-card-contents">
                                     <div className = "channel-img"></div>
                                     <div className = "video-details">
-                                        <div className="video-details-title"></div>
+                                        <div className="video-details-title">{video.snippet.title}</div>
                                         <div className="video-details-channel-title"></div>
                                     </div>
                                 </div>
@@ -75,18 +72,4 @@ const Recommended = ({paddingLeft}) => {
     )
 }
 
-// const mapStateToProps = state => {
-//     console.log(state)
-//     return {
-//         homeVideos: state.homeVideos
-//     }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         fetchHomeVideos: () => dispatch(fetchHomeVideos)
-//     }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Recommended)  
 export default Recommended
