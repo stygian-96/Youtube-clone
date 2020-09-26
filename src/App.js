@@ -9,7 +9,7 @@ const App = () => {
   const changePadding = (amount) => {
     setPaddingLeft(`${amount}px`)
   }
-
+  
   return (
     <div>
       <Navigation changePadding={changePadding}/>
