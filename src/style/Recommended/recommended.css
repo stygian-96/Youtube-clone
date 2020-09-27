@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 .recommended-body{
     position: absolute;
     top: 0;
@@ -73,6 +75,34 @@
     width: 60%;
     height: 18px;
     background-color: rgba(0,0,0,0.1);
+}
+
+/* Style of cards after data fetch */
+
+.video-details-onsuccess{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-details-title-onsuccess{
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    overflow: hidden;
+    max-height: 40px;
+    min-height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    margin: 0px;
+}
+
+.video-details-channel-title-onsuccess{
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13.5px;
+    color: rgba(0,0,0,0.63);
+    margin-top: 8px;
 }
 
 @media(max-width: 1142px){
