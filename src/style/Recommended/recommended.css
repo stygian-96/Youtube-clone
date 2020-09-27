@@ -21,7 +21,7 @@
     justify-content: center;
 }
 
-/* calc((100% - 64px)/4); */
+/* before fetch */
 
 .video-card-container{
     width: calc((100% - 64px)/4);
@@ -103,6 +103,11 @@
     font-size: 13.5px;
     color: rgba(0,0,0,0.63);
     margin-top: 8px;
+}
+
+.channel-img img{
+    width: 40px;
+    border-radius: 50%;
 }
 
 @media(max-width: 1142px){

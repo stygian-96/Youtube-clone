@@ -8,6 +8,7 @@ const Recommended = ({paddingLeft}) => {
 
     const [loading, setLoading] = useState(true)
     const [videos, setVideos] = useState([])
+    const [channelThumb, setChannelThumb] = useState([])
 
     const skeletonCards = () => {
         const row = []
@@ -28,26 +29,41 @@ const Recommended = ({paddingLeft}) => {
         return row
     }
 
-    const videoCard = (videos) => {
+    const videoCard = (videos,channelThumb) => {
         if(videos){
-            return videos.map( video => {
-                return(
-                    <div className="video-card-container" key={video.id}>
+            const row = []
+            for (var i=0; i<videos.length; i++){
+                row.push(
+                    <div className="video-card-container" key={videos[i].id}>
                         <div className="video-card-thumbnail">
-                            <img src={video.snippet.thumbnails.medium.url} alt='Thumbnails' /> 
+                            <img src={videos[i].snippet.thumbnails.medium.url} alt='Thumbnails' /> 
                         </div>
                         <div className="video-card-contents">
-                            <div className = "channel-img"></div>
+                            <div className = "channel-img">
+                                {channelThumb[i] && <img src={channelThumb[i]}/>}
+                            </div>
                             <div className = "video-details-onsuccess">
-                                <div className="video-details-title-onsuccess">{video.snippet.title}</div>
-                                <div className="video-details-channel-title-onsuccess">{video.snippet.channelTitle}</div>
+                                <div className="video-details-title-onsuccess">{videos[i].snippet.title}</div>
+                                <div className="video-details-channel-title-onsuccess">{videos[i].snippet.channelTitle}</div>
                             </div>
                         </div>
                     </div>
                 )
-            } )
+            } 
+            return row
         }
         else return null
+    }
+
+    const fetchChannelThumbs = async (videosList) => {
+        let i=0;
+        let list=[]
+        for(i;i< videosList.length;i++){
+            const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${videosList[i].snippet.channelId}&key=AIzaSyCAL5lhzq8YSeWvVYrZYW0M60Cxv-7BLes`)
+            const json = await response.json()
+            list.push(json.items[0].snippet.thumbnails.default.url)
+        }
+        setChannelThumb(list)
     }
 
     useEffect(() => {
@@ -56,12 +72,13 @@ const Recommended = ({paddingLeft}) => {
             params: {
                 part: 'snippet',
                 chart: 'mostPopular',
-                key: 'AIzaSyDdXPJ_qshotI7fxmBT8S_ihw33BOkvvBo',
+                key: 'AIzaSyCAL5lhzq8YSeWvVYrZYW0M60Cxv-7BLes',
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
                 setLoading(false)
                 setVideos([...res.data.items])
+                fetchChannelThumbs([...res.data.items])
             }).catch( error => {
                 console.log(error)
             })
@@ -73,7 +90,7 @@ const Recommended = ({paddingLeft}) => {
             <div className="container" style={containerWidth}>
                 {loading ? 
                     skeletonCards() : 
-                    videoCard(videos)
+                    videoCard(videos,channelThumb)
                 }
             </div>
         </div>
