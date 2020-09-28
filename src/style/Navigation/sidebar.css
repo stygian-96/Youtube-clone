@@ -3,6 +3,8 @@
     "show-item --> To hide items when sidebar is half closed
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 .show{
     display: none;
 }
@@ -14,6 +16,7 @@
 
 .sidebar{
     overflow: auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .break{
@@ -21,6 +24,17 @@
     border-bottom: 1px solid lightgray;
     margin: 12px 0px;
 }
+
+/* Sidebar Title */
+
+.sidebar-item-head{
+    margin-left: 24px;
+}
+
+.sidebar-item-head .sidebar-item-title{
+    font-size: 16px
+}
+
 
 
 /* Home Sidebar open */

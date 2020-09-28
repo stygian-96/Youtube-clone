@@ -77,6 +77,12 @@ const Sidebar = ({clsName, changeSidebarState}) => {
 
             {/* break */}
             <div className="break" ></div>
+
+            <div className = "sidebar-item-head show-item">
+                <div className = "sidebar-item-title">
+                    Subscriptions
+                </div>
+            </div>
         </div>
     )
 }
