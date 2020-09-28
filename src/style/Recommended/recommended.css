@@ -6,7 +6,7 @@
     left: 0;
     padding-left: 248px;
     padding-top: 72px;
-    background-color: rgba(0,0,0,0.06);
+    background-color: rgba(0,0,0,0.03);
     min-height: 100vh;
     width: 100%;
 } 
@@ -19,6 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0px 16px;
 }
 
 /* before fetch */
@@ -89,7 +90,11 @@
     width: 90%;
     font-family: 'Roboto', sans-serif;
     background-color: transparent;
+    display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
     overflow: hidden;
+    text-overflow: ellipsis;
     max-height: 40px;
     min-height: 20px;
     line-height: 20px;

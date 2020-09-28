@@ -9,7 +9,6 @@ const Recommended = ({paddingLeft}) => {
 
     const [loading, setLoading] = useState(true)
     const [videos, setVideos] = useState([])
-    const [channelThumb, setChannelThumb] = useState([])
 
     const skeletonCards = () => {
         const row = []
@@ -30,45 +29,34 @@ const Recommended = ({paddingLeft}) => {
         return row
     }
 
-    const videoCard = (videos,channelThumb) => {
+    const videoCard = (videos) => {
         if(videos){
-            const row = []
-            for (var i=0; i<videos.length; i++){
-                row.push(
-                    <div className="video-card-container" key={videos[i].id}>
-                        <HomeVideoContainer video = {videos[i]}/>
+            let row = []
+            row = videos.map(video => {
+                return(
+                    <div className="video-card-container" key={video.id}>
+                        <HomeVideoContainer video = {video}/>
                     </div>
                 )
-            } 
+            })
             return row
         }
         else return null
-    }
-
-    const fetchChannelThumbs = async (videosList) => {
-        let i=0;
-        let list=[]
-        for(i;i< videosList.length;i++){
-            const response = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${videosList[i].snippet.channelId}&key=AIzaSyCAL5lhzq8YSeWvVYrZYW0M60Cxv-7BLes`)
-            const json = await response.json()
-            list.push(json.items[0].snippet.thumbnails.default.url)
-        }
-        setChannelThumb(list)
     }
 
     useEffect(() => {
         setLoading(true)
         Axios.get('https://www.googleapis.com/youtube/v3/videos',{
             params: {
-                part: 'snippet',
+                part: 'snippet,statistics',
                 chart: 'mostPopular',
                 key: 'AIzaSyAkQT0cnUuujogGxvZpN6raT02NdS_tWH0',
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
                 setLoading(false)
+                console.log(res.data.items[0])
                 setVideos([...res.data.items])
-                // fetchChannelThumbs([...res.data.items])
             }).catch( error => {
                 console.log(error)
             })
@@ -80,7 +68,7 @@ const Recommended = ({paddingLeft}) => {
             <div className="container" style={containerWidth}>
                 {loading ? 
                     skeletonCards() : 
-                    videoCard(videos,channelThumb)
+                    videoCard(videos)
                 }
             </div>
         </div>
