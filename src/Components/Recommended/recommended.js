@@ -63,8 +63,8 @@ const Recommended = ({paddingLeft}) => {
 
     return (
         <div className="recommended-body" style={recommendedBodyPadding}>
-            <p className="header">Recommended</p>
             <div className="container" style={containerWidth}>
+            <p className="header" style={containerWidth}>Recommended</p>
                 {loading ? 
                     skeletonCards() : 
                     videoCard(videos)

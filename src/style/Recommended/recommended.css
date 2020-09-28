@@ -13,6 +13,8 @@
 
 .header{
     margin:0px auto 16px 8px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(0,0,0,0.8);
 }
 
 .container{

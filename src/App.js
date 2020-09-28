@@ -20,7 +20,7 @@ const App = () => {
     <>
       <div ref={view}></div>
       <Navigation changePadding={changePadding}/>
-      <Recommended paddingLeft={paddingLeft}/>
+      {/* <Recommended paddingLeft={paddingLeft}/> */}
     </>
   );
 }
