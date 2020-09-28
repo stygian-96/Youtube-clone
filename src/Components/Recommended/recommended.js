@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import '../../style/Recommended/recommended.css'
 import Axios from 'axios'
+import HomeVideoContainer from './homeVideoContainer'
 
 const Recommended = ({paddingLeft}) => {
     const recommendedBodyPadding = {paddingLeft : `${paddingLeft}`}
@@ -35,18 +36,7 @@ const Recommended = ({paddingLeft}) => {
             for (var i=0; i<videos.length; i++){
                 row.push(
                     <div className="video-card-container" key={videos[i].id}>
-                        <div className="video-card-thumbnail">
-                            <img src={videos[i].snippet.thumbnails.medium.url} alt='Thumbnails' /> 
-                        </div>
-                        <div className="video-card-contents">
-                            <div className = "channel-img">
-                                {channelThumb[i] && <img src={channelThumb[i]}/>}
-                            </div>
-                            <div className = "video-details-onsuccess">
-                                <div className="video-details-title-onsuccess">{videos[i].snippet.title}</div>
-                                <div className="video-details-channel-title-onsuccess">{videos[i].snippet.channelTitle}</div>
-                            </div>
-                        </div>
+                        <HomeVideoContainer video = {videos[i]}/>
                     </div>
                 )
             } 
@@ -72,13 +62,13 @@ const Recommended = ({paddingLeft}) => {
             params: {
                 part: 'snippet',
                 chart: 'mostPopular',
-                key: 'AIzaSyCAL5lhzq8YSeWvVYrZYW0M60Cxv-7BLes',
+                key: 'AIzaSyAkQT0cnUuujogGxvZpN6raT02NdS_tWH0',
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
                 setLoading(false)
                 setVideos([...res.data.items])
-                fetchChannelThumbs([...res.data.items])
+                // fetchChannelThumbs([...res.data.items])
             }).catch( error => {
                 console.log(error)
             })
