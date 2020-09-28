@@ -14,6 +14,15 @@ const HomeVideoContainer = ({video}) => {
             }).catch( err => console.log(err))
     }
 
+    const formatViewCount = (views) => {
+        let value = `${views}`;
+        if (views>=1000000000000) value = `${Math.floor(views/1000000000000)}T` 
+        else if (views>=1000000000) value = `${Math.floor(views/1000000000)}B` 
+        else if (views>=1000000) value = `${Math.floor(views/1000000)}M` 
+        else if (views>=1000) value = `${Math.floor(views/1000)}K`
+        return value; 
+    }
+
     useEffect(() => {
         fetchUrl()
     }, [])
@@ -32,6 +41,7 @@ const HomeVideoContainer = ({video}) => {
                 <div className = "video-details-onsuccess">
                     <div className="video-details-title-onsuccess">{video.snippet.title}</div>
                     <div className="video-details-channel-title-onsuccess">{video.snippet.channelTitle}</div>
+                    <div className="video-details-views-onsuccess">{formatViewCount(video.statistics.viewCount)} views</div>
                 </div>
             </div>
         </div>

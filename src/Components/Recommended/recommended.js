@@ -55,7 +55,6 @@ const Recommended = ({paddingLeft}) => {
                 regionCode:'IN'
             }}).then( (res) => {
                 setLoading(false)
-                console.log(res.data.items[0])
                 setVideos([...res.data.items])
             }).catch( error => {
                 console.log(error)
