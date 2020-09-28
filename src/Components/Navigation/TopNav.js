@@ -38,7 +38,10 @@ const TopNav = ({changeSidebarState}) => {
                     <NotificationsIcon className="nav-icon"/>
                 </div>
                 <div className="nav-profile">
-                    <img src="https://lh3.googleusercontent.com/-rW0mpavz1eo/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclprhZYyE8IHU8g2ALJYt0B46E3Vg/s88-c-k-c0x00ffffff-no-rj-mo/photo.jpg"/>
+                    <img 
+                        src="https://lh3.googleusercontent.com/-rW0mpavz1eo/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclprhZYyE8IHU8g2ALJYt0B46E3Vg/s88-c-k-c0x00ffffff-no-rj-mo/photo.jpg"
+                        alt = "P"
+                        />
                 </div>
             </div>
         </div>

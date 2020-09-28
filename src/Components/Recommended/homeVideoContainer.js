@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Axios from 'axios'
+import Moment from 'react-moment'
 
 const HomeVideoContainer = ({video}) => {
     const [url, setUrl] = useState('')
@@ -27,6 +28,15 @@ const HomeVideoContainer = ({video}) => {
         fetchUrl()
     }, [])
 
+    const toUpperCaseFilter = (d) => {
+        let date = '';
+        if (d[0]==='a'){
+            date = '1'+ d.slice(1)
+            return date
+        }
+        else return d;
+    }
+
     return (
         <div>
             <div className="video-card-thumbnail">
@@ -35,13 +45,17 @@ const HomeVideoContainer = ({video}) => {
             <div className="video-card-contents">
                 <div className = "channel-img">
                     {loading ? null:
-                        <img src={url} />    
+                        <img src={url} alt="C"/>    
                     }
                 </div>
                 <div className = "video-details-onsuccess">
                     <div className="video-details-title-onsuccess">{video.snippet.title}</div>
                     <div className="video-details-channel-title-onsuccess">{video.snippet.channelTitle}</div>
-                    <div className="video-details-views-onsuccess">{formatViewCount(video.statistics.viewCount)} views</div>
+                    <div className="video-details-views-onsuccess">
+                        {formatViewCount(video.statistics.viewCount)} views
+                        <span>•</span>
+                        <Moment filter={toUpperCaseFilter} fromNow>{video.snippet.publishedAt}</Moment>
+                    </div>
                 </div>
             </div>
         </div>
