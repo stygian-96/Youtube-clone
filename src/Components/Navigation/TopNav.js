@@ -1,13 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useHistory } from 'react-router-dom'
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import '../../Styles/Navigation/topnav.css'
-import '@polymer/paper-ripple/paper-ripple.js';
 
 const TopNav = ({changeSidebarState}) => {
+    const [searchQuery, setSearchQuery] = useState('')
+    const history = useHistory()
+
+    const handleChange = (e) => {
+        setSearchQuery(e.target.value)
+        console.log('Hello')
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        history.push(`/search/${searchQuery}`)
+    }
+
     return (
         <div className = "top-nav">
             <div className = "logo">
@@ -20,11 +33,11 @@ const TopNav = ({changeSidebarState}) => {
                 />
             </div>
             <div className="search">
-                <form>
-                    <input placeholder="Search"/>
-                    <div className="search-icon-container">
+                <form onSubmit={handleSubmit}>
+                    <input placeholder="Search" onChange={handleChange}/>
+                    <button type="submit" className="search-icon-container">
                         <SearchIcon className="nav-icon"/>
-                    </div>
+                    </button>
                 </form>
             </div>
             <div className="right">

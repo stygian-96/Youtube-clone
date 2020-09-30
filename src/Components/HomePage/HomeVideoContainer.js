@@ -8,7 +8,7 @@ const HomeVideoContainer = ({video}) => {
 
     const fetchUrl = () => {
         setLoading(true)
-        Axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${video.snippet.channelId}&key=AIzaSyD3SyZi92r28fojMj4h_S0ab-ByKlzVv1M`)
+        Axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${video.snippet.channelId}&key=AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M`)
             .then( res => {
                 setUrl(res.data.items[0].snippet.thumbnails.default.url)
                 setLoading(false)

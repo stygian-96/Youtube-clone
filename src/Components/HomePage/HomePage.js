@@ -7,8 +7,6 @@ const Recommended = ({paddingLeft}) => {
     const recommendedBodyPadding = {paddingLeft : `${paddingLeft}`}
     const containerWidth = {width: `calc(100% - 8px)`}
     
-    console.log(paddingLeft)
-
     const [loading, setLoading] = useState(true)
     const [videos, setVideos] = useState([])
 
@@ -49,12 +47,11 @@ const Recommended = ({paddingLeft}) => {
     useEffect(() => {
         // if (!videos){
             setLoading(true)
-            console.log(videos.length)
             Axios.get('https://www.googleapis.com/youtube/v3/videos',{
                 params: {
                     part: 'snippet,statistics',
                     chart: 'mostPopular',
-                    key: 'AIzaSyD3SyZi92r28fojMj4h_S0ab-ByKlzVv1M',
+                    key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
                     maxResults: 28,
                     regionCode:'IN'
                 }}).then( (res) => {

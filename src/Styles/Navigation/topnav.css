@@ -57,7 +57,9 @@
 }
 
 .search-icon-container{
+    outline: none;
     display: flex;
+    border: none;
     align-items: center;
     justify-content: center;
     width: 65px;
