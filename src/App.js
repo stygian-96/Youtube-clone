@@ -1,7 +1,7 @@
 import React,{useState, useEffect, createRef} from 'react';
 import './App.css'
 import Navigation from './Components/Navigation/Navigation';
-import Recommended from './Components/Recommended/recommended';
+import Recommended from './Components/HomePage/HomePage';
 
 const App = () => {
   const [paddingLeft, setPaddingLeft] = useState("256px")

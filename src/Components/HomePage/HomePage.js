@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
-import '../../style/Recommended/recommended.css'
+import '../../Styles/HomePage/HomePage.css'
 import Axios from 'axios'
-import HomeVideoContainer from './homeVideoContainer'
+import HomeVideoContainer from './HomeVideoContainer'
 
 const Recommended = ({paddingLeft}) => {
     const recommendedBodyPadding = {paddingLeft : `${paddingLeft}`}

@@ -7,7 +7,7 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import HistoryIcon from '@material-ui/icons/History';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
-import '../../style/Navigation/sidebar.css'
+import '../../Styles/Navigation/sidebar.css'
 
 const Sidebar = ({clsName, changeSidebarState}) => {
     return (

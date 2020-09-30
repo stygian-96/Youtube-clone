@@ -4,7 +4,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import VideoCallIcon from '@material-ui/icons/VideoCall';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import '../../style/Navigation/topnav.css'
+import '../../Styles/Navigation/topnav.css'
 import '@polymer/paper-ripple/paper-ripple.js';
 
 const TopNav = ({changeSidebarState}) => {
