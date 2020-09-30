@@ -6,6 +6,8 @@ import HomeVideoContainer from './HomeVideoContainer'
 const Recommended = ({paddingLeft}) => {
     const recommendedBodyPadding = {paddingLeft : `${paddingLeft}`}
     const containerWidth = {width: `calc(100% - 8px)`}
+    
+    console.log(paddingLeft)
 
     const [loading, setLoading] = useState(true)
     const [videos, setVideos] = useState([])
