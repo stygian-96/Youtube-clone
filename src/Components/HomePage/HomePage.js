@@ -45,22 +45,20 @@ const Recommended = ({paddingLeft}) => {
     }
 
     useEffect(() => {
-        // if (!videos){
-            setLoading(true)
-            Axios.get('https://www.googleapis.com/youtube/v3/videos',{
-                params: {
-                    part: 'snippet,statistics',
-                    chart: 'mostPopular',
-                    key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
-                    maxResults: 28,
-                    regionCode:'IN'
-                }}).then( (res) => {
-                    setLoading(false)
-                    setVideos([...res.data.items])
-                }).catch( error => {
-                    console.log(error)
-                })
-        // }
+        setLoading(true)
+        Axios.get('https://www.googleapis.com/youtube/v3/videos',{
+            params: {
+                part: 'snippet,statistics',
+                chart: 'mostPopular',
+                key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
+                maxResults: 28,
+                regionCode:'IN'
+            }}).then( (res) => {
+                setLoading(false)
+                setVideos([...res.data.items])
+            }).catch( error => {
+                console.log(error)
+            })
     }, [])
 
     return (
