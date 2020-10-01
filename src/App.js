@@ -26,7 +26,7 @@ const App = () => {
         <Navigation changePadding={changePadding}/>
         <Switch>
           <Route exact path="/" render={() => <Recommended paddingLeft={paddingLeft}/>} />
-          <Route exact path="/search/:q" render={(props) => <SearchPage {...props}/>} />
+          <Route exact path="/search/:q" render={(props) => <SearchPage paddingLeft={paddingLeft} {...props}/>} />
         </Switch>
       </BrowserRouter>
     </>

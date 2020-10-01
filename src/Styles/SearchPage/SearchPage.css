@@ -1,0 +1,10 @@
+.search-page-body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 248px;
+    padding-top: 72px;
+    background-color: rgba(0,0,0,0.03);
+    min-height: 100vh;
+    width: 100%;
+} 

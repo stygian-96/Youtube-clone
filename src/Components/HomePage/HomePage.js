@@ -4,7 +4,7 @@ import Axios from 'axios'
 import HomeVideoContainer from './HomeVideoContainer'
 
 const Recommended = ({paddingLeft}) => {
-    const recommendedBodyPadding = {paddingLeft : `${paddingLeft}`}
+    const bodyPadding = {paddingLeft : `${paddingLeft}`}
     const containerWidth = {width: `calc(100% - 8px)`}
     
     const [loading, setLoading] = useState(true)
@@ -62,7 +62,7 @@ const Recommended = ({paddingLeft}) => {
     }, [])
 
     return (
-        <div className="recommended-body" style={recommendedBodyPadding}>
+        <div className="recommended-body" style={bodyPadding}>
             <div className="container" style={containerWidth}>
             <p className="header" style={containerWidth}>Recommended</p>
                 {loading ? 
