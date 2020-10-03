@@ -1,13 +1,14 @@
 import Axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import '../../Styles/SearchPage/SearchPage.css'
+import SearchVideoContainer from './SearchVideoContainer'
 
 const SearchPage = (props) =>{
     const {match, paddingLeft} = props
 
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     const bodyPadding = {paddingLeft : `${paddingLeft}`}
 
@@ -29,7 +30,7 @@ const SearchPage = (props) =>{
                 params: {
                     part: 'snippet',
                     type: 'video',
-                    maxResults: 5,
+                    maxResults: 10,
                     key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
                     q: searchQuery
                 }
@@ -45,21 +46,9 @@ const SearchPage = (props) =>{
 
     return (
         <div className='search-page-body' style={bodyPadding}>
-            {!loading && 
-            <div className = "search-video-container">
-                <img src = {searchResults[0].snippet.thumbnails.medium.url} alt="No thumbnail" />
-                <div className = "search-video-body">
-                    <p className = "search-video-title" >{searchResults[0].snippet.title}</p>
-                    <p className = "search-video-channel-title" >
-                        {searchResults[0].snippet.channelTitle}
-                        <span>•</span>
-                        Views
-                        <span>•</span>
-                        Time    
-                    </p>
-                    <p className = "search-video-description">{searchResults[0].snippet.description}</p>
-                </div>
-            </div>}
+            {!loading && searchResults.length &&
+                <SearchVideoContainer searchResults={searchResults}/>
+            }
         </div>
     )
 }

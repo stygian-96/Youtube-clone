@@ -28,7 +28,7 @@ const HomeVideoContainer = ({video}) => {
         fetchUrl()
     }, [])
 
-    const toUpperCaseFilter = (d) => {
+    const toFilter = (d) => {
         let date = '';
         if (d[0]==='a'){
             date = '1'+ d.slice(1)
@@ -54,7 +54,7 @@ const HomeVideoContainer = ({video}) => {
                     <div className="video-details-views-onsuccess">
                         {formatViewCount(video.statistics.viewCount)} views
                         <span>•</span>
-                        <Moment filter={toUpperCaseFilter} fromNow>{video.snippet.publishedAt}</Moment>
+                        <Moment filter={toFilter} fromNow>{video.snippet.publishedAt}</Moment>
                     </div>
                 </div>
             </div>
