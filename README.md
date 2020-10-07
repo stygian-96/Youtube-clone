@@ -1,6 +1,6 @@
 ## Youtube Clone
 
-Youtube Clone using react hooks and youtube api v3
+Youtube Clone using react hooks and youtube data api v3
 
 ## Installation and Setup Instructions
 
