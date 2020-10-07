@@ -7,7 +7,9 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import HistoryIcon from '@material-ui/icons/History';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
+import SidebarIcon from './SidebarItem'
 import '../../Styles/Navigation/sidebar.css'
+import SidebarItem from './SidebarItem';
 
 const Sidebar = ({clsName, changeSidebarState}) => {
     return (
@@ -21,59 +23,21 @@ const Sidebar = ({clsName, changeSidebarState}) => {
                     className="watch-sidebar-nav-logo"
                 />
             </div>
-            <div className = "sidebar-item">
-                <HomeIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Home
-                </div>
-            </div>
-            <div className = "sidebar-item">
-                <WhatshotIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Trending
-                </div>
-            </div>
-            <div className = "sidebar-item">
-                <SubscriptionsIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Subscriptions
-                </div>
-            </div>
+
+            <SidebarItem title="Home" iconName="home" />
+            <SidebarItem title="Trending" iconName="whatshot"/>
+            <SidebarIcon title="Subscriptions" iconName="subscriptions"/>
+            
 
             {/* break */}
             <div className="break" ></div>
 
+            <SidebarItem title="Library" iconName="video_library" />
+            <SidebarItem title="History" iconName="history" />
+            <SidebarItem title="Watch Later" iconName="watchlater" />
+            <SidebarItem title="Playlist 1" iconName="playlist_add" />
+            <SidebarItem title="Playlist 2" iconName="playlist_add" />
 
-            <div className = "sidebar-item">
-                <VideoLibraryIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Library
-                </div>
-            </div>
-            <div className = "sidebar-item show-item">
-                <HistoryIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    History
-                </div>
-            </div>
-            <div className = "sidebar-item show-item">
-                <WatchLaterIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Watch Later
-                </div>
-            </div>
-            <div className = "sidebar-item show-item">
-                <PlaylistAddIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Playlist 1
-                </div>
-            </div>
-            <div className = "sidebar-item show-item">
-                <PlaylistAddIcon className="sidebar-item-icon" />
-                <div className = "sidebar-item-title">
-                    Playlist 2
-                </div>
-            </div>
 
             {/* break */}
             <div className="break" ></div>
