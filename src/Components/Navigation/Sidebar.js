@@ -1,6 +1,5 @@
 import React from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
-import SidebarIcon from './SidebarItem'
 import '../../Styles/Navigation/sidebar.css'
 import SidebarItem from './SidebarItem';
 
@@ -19,7 +18,7 @@ const Sidebar = ({clsName, changeSidebarState}) => {
 
             <SidebarItem title="Home" iconName="home" />
             <SidebarItem title="Trending" iconName="whatshot"/>
-            <SidebarIcon title="Subscriptions" iconName="subscriptions"/>
+            <SidebarItem title="Subscriptions" iconName="subscriptions"/>
             
 
             {/* break */}
