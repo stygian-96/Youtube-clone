@@ -1,12 +1,5 @@
 import React from 'react'
-import HomeIcon from '@material-ui/icons/Home';
-import WhatshotIcon from '@material-ui/icons/Whatshot';
-import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import MenuIcon from '@material-ui/icons/Menu';
-import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
-import HistoryIcon from '@material-ui/icons/History';
-import WatchLaterIcon from '@material-ui/icons/WatchLater';
-import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import SidebarIcon from './SidebarItem'
 import '../../Styles/Navigation/sidebar.css'
 import SidebarItem from './SidebarItem';
