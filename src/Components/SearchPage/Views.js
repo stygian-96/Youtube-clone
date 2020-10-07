@@ -11,14 +11,17 @@ const Views = ({video}) => {
             params: {
                 part: 'statistics',
                 id: video.id.videoId,
-                key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
+                key: 'AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g',
             }}).then( (res) => {
-                setLoading(false)
-                setViews(res.data.item[0].statistics.viewCount)
+                setViews(prev => res.data.items[0].statistics.viewCount)
             }).catch( error => {
                 console.log(error)
             })
     }, [])
+
+    useEffect(() => {
+        setLoading(false)
+    }, [views])
 
     const formatViewCount = (views) => {
         let value = `${views}`;

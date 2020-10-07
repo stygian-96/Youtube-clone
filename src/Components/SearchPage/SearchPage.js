@@ -31,7 +31,7 @@ const SearchPage = (props) =>{
                     part: 'snippet',
                     type: 'video',
                     maxResults: 10,
-                    key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
+                    key: 'AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g',
                     q: searchQuery
                 }
             }).then(res => {

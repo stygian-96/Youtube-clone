@@ -50,7 +50,7 @@ const Recommended = ({paddingLeft}) => {
             params: {
                 part: 'snippet,statistics',
                 chart: 'mostPopular',
-                key: 'AIzaSyCAOqa8HRKgCjnKzewdIax9XBViYzeFB4M',
+                key: 'AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g',
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
