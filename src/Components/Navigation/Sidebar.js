@@ -1,5 +1,12 @@
 import React from 'react'
+import HomeIcon from '@material-ui/icons/Home';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 import MenuIcon from '@material-ui/icons/Menu';
+import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import HistoryIcon from '@material-ui/icons/History';
+import WatchLaterIcon from '@material-ui/icons/WatchLater';
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import '../../Styles/Navigation/sidebar.css'
 import SidebarItem from './SidebarItem';
 
@@ -16,19 +23,39 @@ const Sidebar = ({clsName, changeSidebarState}) => {
                 />
             </div>
 
-            <SidebarItem title="Home" iconName="home" />
-            <SidebarItem title="Trending" iconName="whatshot"/>
-            <SidebarItem title="Subscriptions" iconName="subscriptions"/>
+            <SidebarItem 
+                title="Home" 
+                icon={() => <HomeIcon className="sidebar-item-icon"/>} />
+            <SidebarItem 
+                title="Trending"
+                icon={() => <WhatshotIcon className="sidebar-item-icon"/>}/>
+            <SidebarItem 
+                title="Subscriptions" 
+                icon={() => <SubscriptionsIcon className="sidebar-item-icon"/>}/>
             
 
             {/* break */}
             <div className="break" ></div>
 
-            <SidebarItem title="Library" iconName="video_library" />
-            <SidebarItem title="History" iconName="history" />
-            <SidebarItem title="Watch Later" iconName="watchlater" />
-            <SidebarItem title="Playlist 1" iconName="playlist_add" />
-            <SidebarItem title="Playlist 2" iconName="playlist_add" />
+            <SidebarItem 
+                title="Library" 
+                icon={() => <VideoLibraryIcon className="sidebar-item-icon"/>} />
+            <SidebarItem 
+                title="History"
+                clsName="show-item" 
+                icon={() => <HistoryIcon className="sidebar-item-icon"/>} />
+            <SidebarItem 
+                title="Watch Later"
+                clsName="show-item" 
+                icon={() => <WatchLaterIcon className="sidebar-item-icon"/>} />
+            <SidebarItem 
+                title="Playlist 1"
+                clsName="show-item" 
+                icon={() => <PlaylistAddIcon className="sidebar-item-icon"/>} />
+            <SidebarItem 
+                title="Playlist 2"
+                clsName="show-item" 
+                icon={() => <PlaylistAddIcon className="sidebar-item-icon"/>} />
 
 
             {/* break */}
