@@ -82,6 +82,11 @@
 
 /* Style of cards after data fetch */
 
+.home-video-link{
+    color: rgba(0,0,0,0.85);
+    text-decoration: none;
+}
+
 .video-details-onsuccess{
     width: 100%;
     display: flex;

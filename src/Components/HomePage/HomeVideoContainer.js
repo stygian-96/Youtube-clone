@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Axios from 'axios'
 import Moment from 'react-moment'
+import { Link } from 'react-router-dom'
 
 const HomeVideoContainer = ({video}) => {
     const [url, setUrl] = useState('')
@@ -8,7 +9,7 @@ const HomeVideoContainer = ({video}) => {
 
     const fetchUrl = () => {
         setLoading(true)
-        Axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${video.snippet.channelId}&key=AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g`)
+        Axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${video.snippet.channelId}&key=${process.env.REACT_APP_API_KEY}`)
             .then( res => {
                 setUrl(res.data.items[0].snippet.thumbnails.default.url)
                 setLoading(false)
@@ -38,7 +39,7 @@ const HomeVideoContainer = ({video}) => {
     }
 
     return (
-        <div>
+        <Link to={`/watch/${video.id}`} className="home-video-link">
             <div className="video-card-thumbnail">
                 <img src={video.snippet.thumbnails.medium.url} alt='Thumbnails' /> 
             </div>
@@ -58,7 +59,7 @@ const HomeVideoContainer = ({video}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

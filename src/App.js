@@ -4,6 +4,7 @@ import Navigation from './Components/Navigation/Navigation';
 import Recommended from './Components/HomePage/HomePage';
 import { BrowserRouter,Switch,Route } from 'react-router-dom';
 import SearchPage from './Components/SearchPage/SearchPage';
+import WatchPage from './Components/WatchPage/WatchPage';
 
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" render={() => <Recommended paddingLeft={paddingLeft}/>} />
           <Route exact path="/search/:q" render={(props) => <SearchPage paddingLeft={paddingLeft} {...props}/>} />
+          <Route exact path="/watch/:id" render={(props) => <WatchPage paddingLeft={paddingLeft} {...props}/>} />
         </Switch>
       </BrowserRouter>
     </>

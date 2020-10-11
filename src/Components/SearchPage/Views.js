@@ -7,7 +7,7 @@ const Views = ({video}) => {
 
     useEffect(() => {
         setLoading(true)
-        Axios.get('https://www.googleapis.com/youtube/v3/videos',{
+        Axios.get('AIzaSyCq64skISsmBOfudKDUaxByColf_6NKWaE',{
             params: {
                 part: 'statistics',
                 id: video.id.videoId,

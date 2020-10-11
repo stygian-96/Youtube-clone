@@ -13,6 +13,7 @@ const Navigation = ({changePadding}) => {
     const [className, setClassName] = useState('home-sidebar-open')
 
     useEffect(() => {
+        setIsSidebarOpen(checkWidthChange())
         let timeoutId = null;
         const resizeListener = () => {
             clearTimeout(timeoutId);

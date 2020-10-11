@@ -50,12 +50,13 @@ const Recommended = ({paddingLeft}) => {
             params: {
                 part: 'snippet,statistics',
                 chart: 'mostPopular',
-                key: 'AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g',
+                key: process.env.REACT_APP_API_KEY,
                 maxResults: 28,
                 regionCode:'IN'
             }}).then( (res) => {
                 setLoading(false)
                 setVideos([...res.data.items])
+                console.log(res.data.items)
             }).catch( error => {
                 console.log(error)
             })

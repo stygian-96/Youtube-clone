@@ -3,7 +3,7 @@ import React from 'react'
 const WatchPage = () => {
     return (
         <div>
-            Watch Page            
+            Watch Page       
         </div>
     )
 }
