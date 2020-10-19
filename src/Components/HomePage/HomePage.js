@@ -3,7 +3,7 @@ import '../../Styles/HomePage/HomePage.css'
 import Axios from 'axios'
 import HomeVideoContainer from './HomeVideoContainer'
 
-const Recommended = ({paddingLeft}) => {
+const HomePage = ({paddingLeft}) => {
     const bodyPadding = {paddingLeft : `${paddingLeft}`}
     const containerWidth = {width: `calc(100% - 8px)`}
     
@@ -15,12 +15,12 @@ const Recommended = ({paddingLeft}) => {
         for (var i=0; i<28; i++){
             row.push(
                 <div className="video-card-container">
-                    <div className="video-card-thumbnail"></div>
-                    <div className="video-card-contents">
+                    <div className="thumbnail"></div>
+                    <div className="contents">
                         <div className = "channel-img"></div>
-                        <div className = "video-details">
-                            <div className="video-details-title"></div>
-                            <div className="video-details-channel-title"></div>
+                        <div className = "details">
+                            <div className="details__title"></div>
+                            <div className="details__channel-title"></div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Recommended = ({paddingLeft}) => {
     }, [])
 
     return (
-        <div className="recommended-body" style={bodyPadding}>
+        <div className="homepage-body" style={bodyPadding}>
             <div className="container" style={containerWidth}>
             <p className="header" style={containerWidth}>Recommended</p>
                 {loading ? 
@@ -75,4 +75,4 @@ const Recommended = ({paddingLeft}) => {
     )
 }
 
-export default Recommended
+export default HomePage

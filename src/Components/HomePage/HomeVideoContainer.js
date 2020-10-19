@@ -40,19 +40,19 @@ const HomeVideoContainer = ({video}) => {
 
     return (
         <Link to={`/watch/${video.id}`} className="home-video-link">
-            <div className="video-card-thumbnail">
+            <div className="thumbnail">
                 <img src={video.snippet.thumbnails.medium.url} alt='Thumbnails' /> 
             </div>
-            <div className="video-card-contents">
+            <div className="contents">
                 <div className = "channel-img">
                     {loading ? null:
                         <img src={url} alt="C"/>    
                     }
                 </div>
-                <div className = "video-details-onsuccess">
-                    <div className="video-details-title-onsuccess">{video.snippet.title}</div>
-                    <div className="video-details-channel-title-onsuccess">{video.snippet.channelTitle}</div>
-                    <div className="video-details-views-onsuccess">
+                <div className = "details details--onsuccess">
+                    <div className="details__title--onsuccess">{video.snippet.title}</div>
+                    <div className="details__channel-title--onsuccess">{video.snippet.channelTitle}</div>
+                    <div className="details__views--onsuccess">
                         {formatViewCount(video.statistics.viewCount)} views
                         <span>•</span>
                         <Moment filter={toFilter} fromNow>{video.snippet.publishedAt}</Moment>
