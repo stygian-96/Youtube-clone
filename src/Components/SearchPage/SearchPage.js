@@ -35,7 +35,7 @@ const SearchPage = (props) =>{
                     q: searchQuery
                 }
             }).then(res => {
-                setSearchResults([...res.data.items])
+                setSearchResults(prevState => [...res.data.items], )
             }).catch(err => console.log(err))
         }
     }, [searchQuery])
@@ -45,7 +45,7 @@ const SearchPage = (props) =>{
     }, [searchResults])
 
     return (
-        <div className='search-page-body' style={bodyPadding}>
+        <div className='searchpage-body' style={bodyPadding}>
             {!loading && searchResults.length &&
                 <SearchVideoContainer searchResults={searchResults}/>
             }

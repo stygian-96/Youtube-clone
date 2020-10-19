@@ -7,21 +7,17 @@ const Views = ({video}) => {
 
     useEffect(() => {
         setLoading(true)
-        Axios.get('AIzaSyCq64skISsmBOfudKDUaxByColf_6NKWaE',{
+        Axios.get('https://www.googleapis.com/youtube/v3/videos',{
             params: {
                 part: 'statistics',
                 id: video.id.videoId,
-                key: 'AIzaSyBtT7F6j72_t6PO-sXfRFQ8DpdzeRWJU6g',
+                key: process.env.REACT_APP_API_KEY,
             }}).then( (res) => {
-                setViews(prev => res.data.items[0].statistics.viewCount)
+                setViews(prev => res.data.items[0].statistics.viewCount, setLoading(false))
             }).catch( error => {
                 console.log(error)
             })
     }, [])
-
-    useEffect(() => {
-        setLoading(false)
-    }, [views])
 
     const formatViewCount = (views) => {
         let value = `${views}`;

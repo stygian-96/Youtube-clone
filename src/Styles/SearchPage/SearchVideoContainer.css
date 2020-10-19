@@ -1,4 +1,4 @@
-.search-video-container{
+.video-card-container--search{
     display: flex;
     flex-direction: row;
     height: 132px;
@@ -7,12 +7,12 @@
     margin: 8px 24px 0px 16px;
 }
 
-.search-video-container img{
+.video-card-container--search img{
     max-height: 100%;
     margin-right: 16px;
 }
 
-.search-video-body p{
+.details--search p{
     margin: 0px;
     font-size: 13.5px;
     letter-spacing: 0.5px;
@@ -21,7 +21,7 @@
     color: rgba(0,0,0,0.65);
 }
 
-.search-video-title{
+.details--search__title{
     font-size: 18px !important;
     line-height: 24px !important;
     min-height: 24px !important;
@@ -33,11 +33,11 @@
     text-overflow: ellipsis;
 }
 
-.search-video-channel-title span{
+.details--search__channel-title span{
     margin:0px 4px;
 }
 
-.search-video-description{
+.details--search__description{
     padding-top: 8px;
     display: -webkit-box;
    -webkit-box-orient: vertical;
