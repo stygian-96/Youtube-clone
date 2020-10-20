@@ -31,7 +31,7 @@ const SearchPage = (props) =>{
                     part: 'snippet',
                     type: 'video',
                     maxResults: 10,
-                    key: 'AIzaSyCq64skISsmBOfudKDUaxByColf_6NKWaE',
+                    key: process.env.REACT_APP_API_KEY,
                     q: searchQuery
                 }
             }).then(res => {

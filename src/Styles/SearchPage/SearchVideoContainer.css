@@ -1,4 +1,4 @@
-.video-card-container--search{
+/* .video-card-container--search{
     display: flex;
     flex-direction: row;
     height: 132px;
@@ -25,8 +25,10 @@
     font-size: 18px !important;
     line-height: 24px !important;
     min-height: 24px !important;
-    color: rgba(0,0,0,0.8) !important;
-    display: -webkit-box;
+    color: rgba(0,0,0,0.8) !important; */
+    
+    /* Trimming sentences */
+    /* display: -webkit-box;
    -webkit-box-orient: vertical;
    -webkit-line-clamp: 2;
     overflow: hidden;
@@ -44,4 +46,87 @@
    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.video-card-container--search {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-container {
+  max-width: 360px;
+  width: 360px;
+  min-width: 240px;
+  flex: 1;
+  margin-right: 16px;
+}
+
+img{
+  width: 100%;
+}
+
+.details--search{
+  flex: 1;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+  color: #060606;
+  font-weight: 0;
+}
+
+.details--search__title{
+  font-size: 18px;
+  font-weight: 400;
+  color: #030303;
+  line-height: 24px;
+}
+
+.details--search__viewcount{
+  display: flex;
+  flex-direction: row;
+}
+
+.details--search__viewcount span{
+  margin: 0 4px;
+}
+
+.detials--search__description{
+  line-height: 36px;
+  margin-bottom: 8px;
+}
+
+.details--search__channel-details{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.channel-thumb{
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.channel-title{
+  padding-left: 8px;
+}
+
+@media(max-width:620px){
+  .details--search__description{
+    display:none;
+  }
 }
