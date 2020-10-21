@@ -61,6 +61,8 @@
 .video-card-container--search {
   display: flex;
   flex-direction: row;
+  max-width: 960px;
+  margin: 16px 24px 0px 16px;
 }
 
 .img-container {
@@ -90,6 +92,14 @@ img{
   font-weight: 400;
   color: #030303;
   line-height: 24px;
+  max-height: 48px;
+
+  /* Trimming Sentence */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
 
 .details--search__viewcount{
@@ -101,9 +111,17 @@ img{
   margin: 0 4px;
 }
 
-.detials--search__description{
-  line-height: 36px;
+.details--search__description{
+  line-height: 18px;
   margin-bottom: 8px;
+  max-height: 36px;
+
+  /* Trimming sentence */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
 
 .details--search__channel-details{
@@ -118,6 +136,11 @@ img{
   width: 24px;
   height: 24px;
   background-color: lightgray;
+  border-radius: 50%;
+}
+
+.channel-thumb img{
+  width: 100%;
   border-radius: 50%;
 }
 

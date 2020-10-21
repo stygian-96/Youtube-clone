@@ -10,26 +10,43 @@ const SearchVideo = ({id, channelId, thumbnail, title, channelTitle, publishedAt
 
     useEffect(() => {
         setLoading(true)
-        Axios.get('https://www.googleapis.com/youtube/v3/channels',{
-            params:{
-                part: 'snippet',
-                id: channelId,
-                key: process.env.REACT_APP_API_KEY,
-            }}).then( (res) => {
-                setChannelThumb(prev => res.data.items[0].snippet.thumbnails.default.url)
-            }).catch((err) => {
-                console.log(err)
-            })
-        Axios.get('https://www.googleapis.com/youtube/v3/videos',{
-            params: {
-                part: 'statistics',
-                id: id,
-                key: process.env.REACT_APP_API_KEY,
-            }}).then( (res) => {
-                setViews(prev => res.data.items[0].statistics.viewCount, setLoading(false))
-            }).catch( error => {
-                console.log(error)
-            })
+        // Axios.get('https://www.googleapis.com/youtube/v3/channels',{
+        //     params:{
+        //         part: 'snippet',
+        //         id: channelId,
+        //         key: process.env.REACT_APP_API_KEY,
+        //     }}).then( (res) => {
+        //         setChannelThumb(prev => res.data.items[0].snippet.thumbnails.default.url)
+        //     }).catch((err) => {
+        //         console.log(err)
+        //     })
+        // Axios.get('https://www.googleapis.com/youtube/v3/videos',{
+        //     params: {
+        //         part: 'statistics',
+        //         id: id,
+        //         key: process.env.REACT_APP_API_KEY,
+        //     }}).then( (res) => {
+        //         setViews(prev => res.data.items[0].statistics.viewCount, setLoading(false))
+        //     }).catch( error => {
+        //         console.log(error)
+        //     })
+        let channelThumbApiCall = Axios.get('https://www.googleapis.com/youtube/v3/channels',{
+                                        params:{
+                                            part: 'snippet',
+                                            id: channelId,
+                                            key: process.env.REACT_APP_API_KEY,
+                                        }})
+        let viewCountApiCall = Axios.get('https://www.googleapis.com/youtube/v3/videos',{
+                                        params: {
+                                            part: 'statistics',
+                                            id: id,
+                                            key: process.env.REACT_APP_API_KEY,
+                                        }})
+        Promise.all([channelThumbApiCall, viewCountApiCall])
+                .then( values => {
+                    setChannelThumb(prev => values[0].data.items[0].snippet.thumbnails.default.url)
+                    setViews(prev => values[1].data.items[0].statistics.viewCount, setLoading(false))
+                })
     }, [])
 
     const toFilter = (d) => {
@@ -52,7 +69,8 @@ const SearchVideo = ({id, channelId, thumbnail, title, channelTitle, publishedAt
 
     return (
         <>
-        {!loading && <div className="video-card-container--search">
+        {!loading && 
+        <div className="video-card-container--search">
             <div className="img-container">
                 <img src={thumbnail} alt="No thumbnail" />
             </div>
