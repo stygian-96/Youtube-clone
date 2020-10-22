@@ -11,8 +11,7 @@ const HomeVideoContainer = ({video}) => {
         setLoading(true)
         Axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${video.snippet.channelId}&key=${process.env.REACT_APP_API_KEY}`)
             .then( res => {
-                setUrl(res.data.items[0].snippet.thumbnails.default.url)
-                setLoading(false)
+                setUrl(prev => res.data.items[0].snippet.thumbnails.default.url,setLoading(false))
             }).catch( err => console.log(err))
     }
 
@@ -39,7 +38,12 @@ const HomeVideoContainer = ({video}) => {
     }
 
     return (
-        <Link to={`/watch/${video.id}`} className="home-video-link">
+        <Link to={{
+                pathname: `/watch/${video.id}`,
+                aboutProps: {
+                    name: "Hello there"
+                }
+            }} className="home-video-link">
             <div className="thumbnail">
                 <img src={video.snippet.thumbnails.medium.url} alt='Thumbnails' /> 
             </div>
