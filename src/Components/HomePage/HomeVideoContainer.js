@@ -38,12 +38,7 @@ const HomeVideoContainer = ({video}) => {
     }
 
     return (
-        <Link to={{
-                pathname: `/watch/${video.id}`,
-                aboutProps: {
-                    name: "Hello there"
-                }
-            }} className="home-video-link">
+        <Link to={`/watch/${video.id}`} className="home-video-link">
             <div className="thumbnail">
                 <img src={video.snippet.thumbnails.medium.url} alt='Thumbnails' /> 
             </div>
