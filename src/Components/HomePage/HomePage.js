@@ -3,12 +3,17 @@ import '../../Styles/HomePage/HomePage.css'
 import Axios from 'axios'
 import HomeVideoContainer from './HomeVideoContainer'
 
-const HomePage = ({paddingLeft}) => {
+const HomePage = ({paddingLeft, setIsWatchPage}) => {
     const bodyPadding = {paddingLeft : `${paddingLeft}`}
     const containerWidth = {width: `calc(100% - 8px)`}
     
     const [loading, setLoading] = useState(true)
     const [videos, setVideos] = useState([])
+
+    // To set sidebar state
+    useEffect(() => {
+        setIsWatchPage(false)
+    }, [])
 
     const skeletonCards = () => {
         const row = []

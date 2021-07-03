@@ -178,3 +178,7 @@
     margin-right: 24px;
     font-weight: 550;
 }
+
+.watch-sidebar-close{
+    display: none;
+}

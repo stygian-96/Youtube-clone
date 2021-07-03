@@ -1,0 +1,57 @@
+.video-secondary-details__channel{
+    font-family: 'Roboto', sans-serif;
+    width: "100%";
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    color: "#030303"
+}
+
+.video-secondary-details__channel--img-container{
+    width: 64px;
+    height: 51px;
+}
+
+.video-secondary-details__channel--img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50px;
+}
+
+.video-secondary-details__channel--details-container{
+    flex:1 1;
+}
+
+.video-secondary-details__channel--details-name{
+    font-size: 14px;
+    padding-bottom: 4px;
+    font-weight: 500;
+}
+
+.video-secondary-details__channel--details-noofsubs{
+    font-size: 12px;
+}
+
+/* 065fd4 */
+.video-secondary-details__channel--buttons-join{
+    border: 1px solid #065fd4;
+    background: none;
+    padding: 9px 15px;
+    border-radius: 3px;
+    font-weight: 500;
+    color: #065fd4;
+    margin: 0 6px;
+    cursor: pointer;
+}
+
+/* cc00000 */
+.video-secondary-details__channel--buttons-subscribe{
+    border: 1px solid #cc0000;
+    background: #cc0000;
+    padding: 9px 15px;
+    border-radius: 3px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 6px;
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React,{useState, useEffect}  from 'react'
+import React,{useState, useEffect, useLayoutEffect}  from 'react'
 import Sidebar from './Sidebar'
 import TopNav from './TopNav'
 
@@ -7,35 +7,48 @@ const checkWidthChange = () => {
     else return true;
 }
 
-const Navigation = ({changePadding}) => {
+const Navigation = ({changePadding, isWatchPage, setIsWatchPageSidebarOpen}) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true)
     const [onceToggled, setOnceToggled] = useState(false)
     const [className, setClassName] = useState('home-sidebar-open')
 
     useEffect(() => {
-        setIsSidebarOpen(checkWidthChange())
-        let timeoutId = null;
-        const resizeListener = () => {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {setIsSidebarOpen(checkWidthChange())}, 100);
-        };
-        window.addEventListener('resize', resizeListener);
-    
-        return () => {
-            window.removeEventListener('resize', resizeListener);
+        setIsSidebarOpen(isWatchPage ? false : checkWidthChange())
+        if(!isWatchPage){
+            let timeoutId = null
+            const resizeListener = () => {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {setIsSidebarOpen(checkWidthChange())}, 100);
+            };
+            window.addEventListener('resize', resizeListener);
+        
+            return () => {
+                window.removeEventListener('resize', resizeListener);
+            }
         }
-    }, [])
+    }, [isWatchPage])
+
+    useLayoutEffect(() => {
+        setIsSidebarOpen(!isWatchPage)
+    }, [isWatchPage])
 
     useEffect(() => {
-        if(isSidebarOpen){
+        if(isSidebarOpen && !isWatchPage){
             setClassName('home-sidebar-open')
             changePadding('248')
-        }
-        else{
+        }else if(!isSidebarOpen && !isWatchPage){
             setClassName('home-sidebar-closed')
             changePadding('80')
-        }
-    },[isSidebarOpen])
+        }else if(isSidebarOpen && isWatchPage){
+            setClassName('watch-sidebar-open')
+            changePadding('0')
+            setIsWatchPageSidebarOpen(true)
+        }else if(!isSidebarOpen && isWatchPage){
+            setClassName('watch-sidebar-close')
+            changePadding('0')
+            setIsWatchPageSidebarOpen(false)
+        } 
+    },[isSidebarOpen,isWatchPage])
 
     const changeSidebarState = () => {
         if (!onceToggled){

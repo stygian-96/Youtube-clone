@@ -9,6 +9,8 @@ import WatchPage from './Components/WatchPage/WatchPage';
 
 const App = () => {
   const [paddingLeft, setPaddingLeft] = useState("256px")
+  const [isWatchPageSidebarOpen, setIsWatchPageSidebarOpen] = useState(false)
+  const [isWatchPage, setIsWatchPage] = useState(false)
 
   const view = createRef()
 
@@ -24,11 +26,11 @@ const App = () => {
     <>
       <div ref={view}></div>
       <BrowserRouter>
-        <Navigation changePadding={changePadding}/>
+        <Navigation setIsWatchPageSidebarOpen={setIsWatchPageSidebarOpen} isWatchPage={isWatchPage} changePadding={changePadding}/>
         <Switch>
-          <Route exact path="/" render={() => <HomePage paddingLeft={paddingLeft}/>} />
-          <Route exact path="/search/:q" render={(props) => <SearchPage paddingLeft={paddingLeft} {...props}/>} />
-          <Route exact path="/watch/:id" render={(props) => <WatchPage paddingLeft={paddingLeft} {...props}/>} />
+          <Route exact path="/" render={() => <HomePage setIsWatchPage={setIsWatchPage} paddingLeft={paddingLeft}/>} />
+          <Route exact path="/search/:q" render={(props) => <SearchPage setIsWatchPage={setIsWatchPage} paddingLeft={paddingLeft} {...props}/>} />
+          <Route exact path="/watch/:id" render={(props) => <WatchPage isWatchPageSidebarOpen={isWatchPageSidebarOpen} setIsWatchPage={setIsWatchPage} paddingLeft={paddingLeft} {...props}/>} />
         </Switch>
       </BrowserRouter>
     </>

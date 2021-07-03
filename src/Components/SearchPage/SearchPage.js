@@ -4,13 +4,18 @@ import '../../Styles/SearchPage/SearchPage.css'
 import SearchVideo from './SearchVideo'
 
 const SearchPage = (props) =>{
-    const {match, paddingLeft} = props
+    const {match, setIsWatchPage, paddingLeft} = props
 
     const [searchQuery, setSearchQuery] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [loading, setLoading] = useState(false)
 
     const bodyPadding = {paddingLeft : `${paddingLeft}`}
+
+    // To set sidebar state
+    useEffect(() => {
+        setIsWatchPage(false)
+    }, [])
 
     // To handle props change
     useEffect(() => {
@@ -50,19 +55,6 @@ const SearchPage = (props) =>{
                 searchResults.map( video => {
                     return (
                         <>
-                            {/* <div className = "video-card-container--search">
-                                <img src = {video.snippet.thumbnails.medium.url} alt="No thumbnail" />
-                                <div className = "details--search">
-                                    <p className = "details--search__title" >{video.snippet.title}</p>
-                                    <p className = "details--search__channel-title" >
-                                        {video.snippet.channelTitle}
-                                        <span>•</span>
-                                        <Views video={video}/>
-                                        <Moment filter={toFilter} fromNow>{video.snippet.publishedAt}</Moment>
-                                    </p>
-                                    <p className = "details--search__description">{video.snippet.description}</p>
-                                </div>
-                            </div> */}
                             <SearchVideo 
                                 key={video.id.videoId}
                                 id={video.id.videoId}
